@@ -1,15 +1,21 @@
-import { StyleSheet,Button, Pressable} from 'react-native';
+import { StyleSheet, Pressable} from 'react-native';
+import {useFonts, Italianno_400Regular} from '@expo-google-fonts/italianno';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { router } from 'expo-router';
 
 export default function HomeScreen() {
+  const [fontsLoaded] = useFonts({
+    Italianno_400Regular,
+  });
+  if(!fontsLoaded){return null;}
+
   return (
     <ThemedView style={styles.mainContainer}>
       <ThemedView style={styles.contextMain}>
         <ThemedView style={styles.containerTitle}>
-          <ThemedText>Controle de estoque</ThemedText>
-          <ThemedText>Moda Intíma</ThemedText>
+          <ThemedText style={styles.texteTitle}>Moda Intíma</ThemedText>
+          <ThemedText style={styles.textesbutitle }>Controle de sacolas</ThemedText>
         </ThemedView>
         <ThemedView style={styles.containerButton}>
           <Pressable style={styles.buttonofcontainer1} onPress={()=>router.push("../screens/sacola-pull")}>
@@ -47,7 +53,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap:10
+    gap:20
   },
   containerButton:{
     flex: 1,
@@ -90,9 +96,14 @@ const styles = StyleSheet.create({
     elevation: 5,
     overflow: "hidden"
   },
+  textesbutitle:{
+    fontSize:25,
+    fontWeight:"500",
+    color: "#ffff",
+  },
   texteTitle:{
-    fontSize:15,
-    fontWeight: "bold",
+    fontSize:80,
+    fontFamily: 'Italianno_400Regular',
     color: "#ffff",
   }
 });
