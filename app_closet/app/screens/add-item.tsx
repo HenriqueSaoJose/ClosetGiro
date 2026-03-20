@@ -1,27 +1,48 @@
+
+import { Pressable, StyleSheet, TextInput } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { Pressable, StyleSheet } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { ThemedView } from "@/components/themed-view";
 import { router } from "expo-router";
+import { Picker } from "@react-native-picker/picker";
+import {  useState } from "react";
 
 
-export default function SacolaPullScreen(){
+
+export default function AddItemScreen(){
+  const [nome,setNome] = useState("")
+  const[tamanho,setTamanho] = useState("")
+  const [quantidade,setQuantidade] = useState("")
+  const[categoria,setCategoria] = useState("")
+  const[cod,setcod] = useState("")
   return(
-    <ThemedView style={styles.ContainerMain}>
+  <ThemedView style={styles.ContainerMain}>
           <ThemedView style={styles.ContainerMenu}>
             <ThemedView style={styles.ContainerText}>
-              <ThemedText style={styles.fontmain}>Estoque</ThemedText>
+              <ThemedText style={styles.fontmain}>Novo Item</ThemedText>
             </ThemedView>
             <Pressable style={styles.buttonEstoque} onPress={()=>{router.push('../screens/add-item')}}>
-              <Ionicons name="add" size={35} color="white" />
+              <Ionicons name="save" size={35} color="white" />
             </Pressable>
         </ThemedView>
         <ThemedView>
-
+            <ThemedView>
+              <ThemedText>Nome:</ThemedText>
+              <TextInput/>
+            </ThemedView>
+             <ThemedView>
+              <ThemedText>Tamanho:</ThemedText>
+              <Picker>
+                <Picker.Item label="PP" value="PP" />
+                <Picker.Item label="P" value="P" />
+                <Picker.Item label="M" value="M" />
+                <Picker.Item label="G" value="G" />
+                <Picker.Item label="GG" value="GG" />
+              </Picker>
+            </ThemedView>
         </ThemedView>
-    </ThemedView>
-  )
-}
+    </ThemedView>)
+    }
 const styles = StyleSheet.create({
     ContainerMain:{
         flex: 1,
@@ -29,8 +50,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent:'flex-start',
-    },
-    ContainerMenu:{
+    }, ContainerMenu:{
         height: 60,
         width: '90%',
         display: 'flex',
@@ -55,7 +75,7 @@ const styles = StyleSheet.create({
       shadowRadius: 19,
       elevation: 5,
     },
-    fontmain:{
+     fontmain:{
       fontFamily: 'Italianno_400Regular',
       color: "#ffff",
       fontSize:35
@@ -69,4 +89,6 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       borderRadius:100,
     }
+    
+ 
 })

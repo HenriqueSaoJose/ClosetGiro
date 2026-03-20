@@ -2,6 +2,7 @@ import { ThemedText } from "@/components/themed-text";
 import { Pressable, StyleSheet } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { ThemedView } from "@/components/themed-view";
+import { router } from "expo-router";
 
 
 export default function SacolaPullScreen(){
@@ -11,7 +12,7 @@ export default function SacolaPullScreen(){
             <ThemedView style={styles.ContainerText}>
               <ThemedText style={styles.fontmain}>Sacolas Enviada</ThemedText>
             </ThemedView>
-            <Pressable style={styles.buttonEstoque}>
+            <Pressable style={styles.buttonEstoque} onPress={()=>{router.push("../estoque")}}>
               <Ionicons name="arrow-down-circle-outline" size={35} color="white" />
             </Pressable>
         </ThemedView>
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
       fontSize:30
     },
     buttonEstoque:{
-      width: '15%',
+      width: '13%',
       height:'86%',
       backgroundColor: "#7C3AED",
       display: 'flex',
