@@ -6,6 +6,8 @@ import { ThemedView } from "@/components/themed-view";
 import { router } from "expo-router";
 import { Picker } from "@react-native-picker/picker";
 import {  useState } from "react";
+import Toast from 'react-native-toast-message';
+
 
 
 
@@ -15,13 +17,23 @@ export default function AddItemScreen(){
   const [quantidade,setQuantidade] = useState("")
   // const[categoria,setCategoria] = useState("")
   const[cod,setcod] = useState("")
+
+  async function saveClothes(){
+    if(nome === "" || tamanho === "" || quantidade === "" || cod === ""){
+      Toast.show({
+        type: 'error',
+        text1: 'Preencha todos os campos',
+      })
+    }
+}
+ 
   return(
   <ThemedView style={styles.ContainerMain}>
           <ThemedView style={styles.ContainerMenu}>
             <ThemedView style={styles.ContainerText}>
               <ThemedText style={styles.fontmain}>Novo Item</ThemedText>
             </ThemedView>
-            <Pressable style={styles.buttonEstoque} onPress={()=>{router.push('../screens/add-item')}}>
+            <Pressable style={styles.buttonEstoque} onPress={()=>{saveClothes()}}>
               <Ionicons name="save" size={35} color="white" />
             </Pressable>
         </ThemedView>
