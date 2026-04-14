@@ -6,25 +6,30 @@ import { ThemedView } from "@/components/themed-view";
 import { router } from "expo-router";
 import { Picker } from "@react-native-picker/picker";
 import {  useState } from "react";
-import Toast from 'react-native-toast-message';
-
-
+import  AwesomeAlert from "react-native-awesome-alerts"
+import { View } from "react-native-reanimated/lib/typescript/Animated";
+import { InsertClothes } from "../database/RoupasServices";
 
 
 export default function AddItemScreen(){
   const [nome,setNome] = useState("")
   const[tamanho,setTamanho] = useState("")
+  const [showAlertError, setShowAlertError] = useState(false);
   const [quantidade,setQuantidade] = useState("")
+  
   // const[categoria,setCategoria] = useState("")
   const[cod,setcod] = useState("")
 
   async function saveClothes(){
-    if(nome === "" || tamanho === "" || quantidade === "" || cod === ""){
-      Toast.show({
-        type: 'error',
-        text1: 'Preencha todos os campos',
-      })
+    if(nome === "" || tamanho === "" || quantidade !== ""|| cod === ""){
+      //Colocar o Alert de erro aqui
+    }else{
+      const response = await InsertClothes(cod,nome,tamanho,parseInt(quantidade))
+      if(response.sucess){
+        router.back()
+      }
     }
+
 }
  
   return(
