@@ -6,8 +6,8 @@ import { ThemedView } from "@/components/themed-view";
 import { Picker } from "@react-native-picker/picker";
 import AwesomeAlert from 'react-native-awesome-alerts';
 import {  useState } from "react";
-
-
+import { router } from "expo-router";
+import { InsertClothes } from "../database/RoupasServices";
 
 
 export default function AddItemScreen(){
@@ -15,6 +15,7 @@ export default function AddItemScreen(){
   const[tamanho,setTamanho] = useState("")
   const [quantidade,setQuantidade] = useState("")
   const [showAlertError,setShowAlertError] = useState(false)
+  
   // const[categoria,setCategoria] = useState("")
   const[cod,setcod] = useState("")
 
@@ -23,7 +24,16 @@ export default function AddItemScreen(){
       setShowAlertError(true)
       console.log("Preencha todos os campos")
     
+    if(nome === "" || tamanho === "" || quantidade !== ""|| cod === ""){
+      //Colocar o Alert de erro aqui
+    }else{
+      const response = await InsertClothes(cod,nome,tamanho,parseInt(quantidade))
+      if(response.sucess){
+        router.back()
+      }
     }
+  }
+
 }
  
   return(

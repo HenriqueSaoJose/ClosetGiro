@@ -1,6 +1,6 @@
 import {InicializeDB} from './db';
 
-export async function InsertClothes(ID:number, nome: string, tamanho: string, quantidade: number) {
+export async function InsertClothes(ID:string, nome: string, tamanho: string, quantidade: number) {
   try{
     const db = await InicializeDB();
     await db.execAsync(`
