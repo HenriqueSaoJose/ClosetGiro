@@ -3,10 +3,9 @@ import { Pressable, StyleSheet, TextInput } from "react-native";
 import { ThemedText } from "@/components/themed-text";
 import { Ionicons } from '@expo/vector-icons';
 import { ThemedView } from "@/components/themed-view";
-import { router } from "expo-router";
 import { Picker } from "@react-native-picker/picker";
+import AwesomeAlert from 'react-native-awesome-alerts';
 import {  useState } from "react";
-import Toast from 'react-native-toast-message';
 
 
 
@@ -15,20 +14,30 @@ export default function AddItemScreen(){
   const [nome,setNome] = useState("")
   const[tamanho,setTamanho] = useState("")
   const [quantidade,setQuantidade] = useState("")
+  const [showAlertError,setShowAlertError] = useState(false)
   // const[categoria,setCategoria] = useState("")
   const[cod,setcod] = useState("")
 
   async function saveClothes(){
     if(nome === "" || tamanho === "" || quantidade === "" || cod === ""){
-      Toast.show({
-        type: 'error',
-        text1: 'Preencha todos os campos',
-      })
+      setShowAlertError(true)
+      console.log("Preencha todos os campos")
+    
     }
 }
  
   return(
   <ThemedView style={styles.ContainerMain}>
+       <AwesomeAlert
+        show={showAlertError}
+        title="Sucesso"
+        message="Pedido salvo!"
+        closeOnTouchOutside={true}
+        showConfirmButton={true}
+        confirmText="OK"
+        confirmButtonColor="#4CAF50"
+        onConfirmPressed={() => setShowAlertError(false)}
+      />
           <ThemedView style={styles.ContainerMenu}>
             <ThemedView style={styles.ContainerText}>
               <ThemedText style={styles.fontmain}>Novo Item</ThemedText>
@@ -125,7 +134,7 @@ const styles = StyleSheet.create({
     },
     containerInput:{
       width:"90%",
-      height:"16%",
+      height:"20%",
       gap:6,
       display: 'flex',
       flexDirection: 'column',
