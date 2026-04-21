@@ -3,9 +3,23 @@ import { Pressable, StyleSheet } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { ThemedView } from "@/components/themed-view";
 import { router } from "expo-router";
+import { useEffect } from "react";
+import { GetClothes } from "../database/GetRoupasServices";
+interface dataClothes{
+  suceess:boolean,
 
+}
+interface Clothes{
 
+}
 export default function SacolaPullScreen(){
+  useEffect(()=>{
+    const response = async () =>{
+    const getdata = await GetClothes()
+    console.log(getdata)
+    }
+  })
+
   return(
     <ThemedView style={styles.ContainerMain}>
           <ThemedView style={styles.ContainerMenu}>

@@ -46,12 +46,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop:360,
+    marginTop:260,
 
   },
   containerTitle:{
     flexDirection: 'column',
-    alignItems: 'center',
+     alignItems: 'center',
+    width:'100%',
+    height:"25%",
     justifyContent: 'center',
     gap:20
   },
@@ -102,7 +104,8 @@ const styles = StyleSheet.create({
     color: "#ffff",
   },
   texteTitle:{
-    fontSize:80,
+    fontSize:85,
+    height:"auto",
     fontFamily: 'Italianno_400Regular',
     color: "#ffff",
   }

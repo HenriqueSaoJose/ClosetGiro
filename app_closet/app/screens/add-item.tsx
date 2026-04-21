@@ -1,10 +1,10 @@
 
-import { Pressable, StyleSheet, TextInput } from "react-native";
+import { Pressable, StyleSheet, TextInput , Alert } from "react-native";
 import { ThemedText } from "@/components/themed-text";
+
 import { Ionicons } from '@expo/vector-icons';
 import { ThemedView } from "@/components/themed-view";
 import { Picker } from "@react-native-picker/picker";
-import AwesomeAlert from 'react-native-awesome-alerts';
 import {  useState } from "react";
 import { router } from "expo-router";
 import { InsertClothes } from "../database/RoupasServices";
@@ -14,40 +14,23 @@ export default function AddItemScreen(){
   const [nome,setNome] = useState("")
   const[tamanho,setTamanho] = useState("")
   const [quantidade,setQuantidade] = useState("")
-  const [showAlertError,setShowAlertError] = useState(false)
   
   // const[categoria,setCategoria] = useState("")
   const[cod,setcod] = useState("")
 
   async function saveClothes(){
     if(nome === "" || tamanho === "" || quantidade === "" || cod === ""){
-      setShowAlertError(true)
+      Alert.alert("Erro","Preencha todos os campos")
       console.log("Preencha todos os campos")
-    
-    if(nome === "" || tamanho === "" || quantidade !== ""|| cod === ""){
-      //Colocar o Alert de erro aqui
-    }else{
+      }else{
       const response = await InsertClothes(cod,nome,tamanho,parseInt(quantidade))
       if(response.sucess){
         router.back()
       }
     }
   }
-
-}
- 
-  return(
+return(
   <ThemedView style={styles.ContainerMain}>
-       <AwesomeAlert
-        show={showAlertError}
-        title="Sucesso"
-        message="Pedido salvo!"
-        closeOnTouchOutside={true}
-        showConfirmButton={true}
-        confirmText="OK"
-        confirmButtonColor="#4CAF50"
-        onConfirmPressed={() => setShowAlertError(false)}
-      />
           <ThemedView style={styles.ContainerMenu}>
             <ThemedView style={styles.ContainerText}>
               <ThemedText style={styles.fontmain}>Novo Item</ThemedText>
@@ -85,6 +68,9 @@ export default function AddItemScreen(){
         </ThemedView>
     </ThemedView>)
     }
+
+ 
+  
 const styles = StyleSheet.create({
     ContainerMain:{
         flex: 1,
