@@ -1,8 +1,8 @@
-import Main from './src/pages/main';
+import AddItem from './src/pages/additem';
 
 export default function App() {
     return (
-        <Main/>
+        <AddItem/>
     );
 }
 

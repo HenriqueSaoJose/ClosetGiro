@@ -1,6 +1,7 @@
 export const themas = {
     Colors :{
         brackgroundcolor: '#E5B0BD',
+        buttoncolor: "#C76A8A",
         primary:'#878af6',
         secondary:'#ffffff',
         lightGray:'#d7d8d7',
@@ -9,7 +10,7 @@ export const themas = {
         red:'#FF494C',
         blueLigth:'#87CEF6',
         blackTransparent:'#00000040',
-        TitleColor:'#ffff'
+        TitleColor:'#ffffff'
     },
     Fonts:{
         fntTitle:'Italianno_400Regular',
