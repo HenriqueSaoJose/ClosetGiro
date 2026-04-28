@@ -6,7 +6,7 @@ export const style = StyleSheet.create({
         flex:1,
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor: themas.Colors.brackgroundcolor,
+        backgroundColor: themas.Colors.backgroundcolor,
     },
     boxTop:{
         flex:1,
@@ -37,7 +37,7 @@ export const style = StyleSheet.create({
     btnMain:{
         width:300,
         height:50,
-        backgroundColor: themas.Colors.primary,
+        backgroundColor: themas.Colors.buttomcolor,
         borderRadius:10,
         alignItems:'center',
         justifyContent:'center',

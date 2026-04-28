@@ -1,7 +1,7 @@
 export const themas = {
     Colors :{
-        brackgroundcolor: '#E5B0BD',
-        buttoncolor: "#C76A8A",
+        backgroundcolor: '#E5B0BD',
+        buttomcolor: "#A40652",
         primary:'#878af6',
         secondary:'#ffffff',
         lightGray:'#d7d8d7',

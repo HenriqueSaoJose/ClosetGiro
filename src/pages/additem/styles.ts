@@ -1,10 +1,10 @@
-import { StyleSheet,Dimensions} from "react-native";
+import { StyleSheet} from "react-native";
 import { themas } from "../../global/themes";
 
 export const style = StyleSheet.create({
     ContainerMain:{
         flex: 1,
-        backgroundColor: themas.Colors.brackgroundcolor,
+        backgroundColor: themas.Colors.backgroundcolor,
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent:'flex-start',
@@ -21,7 +21,7 @@ export const style = StyleSheet.create({
     ContainerText : {
       height:"92%",
       width: '58%',
-      backgroundColor: themas.Colors.buttoncolor,
+      backgroundColor: themas.Colors.buttomcolor,
       display: 'flex',
       alignItems: 'flex-start',
       borderRadius: 5,
@@ -42,7 +42,7 @@ export const style = StyleSheet.create({
     buttonEstoque:{
       width: '20%',
       height:'86%',
-      backgroundColor: themas.Colors.primary,
+      backgroundColor: themas.Colors.buttomcolor,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
