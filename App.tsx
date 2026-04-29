@@ -1,12 +1,10 @@
-import SacolaPull from './src/pages/sacolapull';
-//import AddItem from './src/pages/additem';
-//import Main from './src/pages/main';
+import {NavigationContainer} from '@react-navigation/native';
+import Routes from './src/routes/index.routes';
 
 export default function App() {
     return (
-        <SacolaPull/>
-        //<AddItem/>
-        //<Main/>
+        <NavigationContainer>
+            <Routes />
+        </NavigationContainer>
     );
 }
-

@@ -58,7 +58,7 @@ export const style = StyleSheet.create({
         gap:10,
         alignItems:'center'
     },
-    button: {
+    Button: {
         backgroundColor: 'red',
         justifyContent: 'center',
         alignItems: 'center',
@@ -66,7 +66,7 @@ export const style = StyleSheet.create({
         marginVertical: 10,
         borderRadius: 10,
     },
-    buttonText: {
+    ButtonText: {
         color: 'white',
         fontWeight: 'bold',
     },    

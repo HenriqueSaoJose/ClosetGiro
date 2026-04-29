@@ -11,7 +11,7 @@ import { Flag } from "../../components/Flag";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function SacolaPull( ){
+export default function SacolaPush( ){
 
     const {taskList,handleDelete,handleEdit,filter} = useContext<AuthContextType>(AuthContextList)!;
 
@@ -83,7 +83,7 @@ export default function SacolaPull( ){
     return(
         <View style={style.container}>
             <View style={style.header}>
-                <Text style={style.greeting}>Sacola Pull <Text style={{fontWeight:'bold'}}>Caio E.</Text></Text>
+                <Text style={style.greeting}>Sacola Push </Text>
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('Main')}>
                     <Ionicons name="arrow-undo-outline" size={35} color="white" />
                 </TouchableOpacity>
