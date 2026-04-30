@@ -37,7 +37,7 @@ export const style = StyleSheet.create({
     btnMain:{
         width:300,
         height:50,
-        backgroundColor: themas.Colors.buttomcolor,
+        backgroundColor: themas.Colors.buttoncolor,
         borderRadius:10,
         alignItems:'center',
         justifyContent:'center',

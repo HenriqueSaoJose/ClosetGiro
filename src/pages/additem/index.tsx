@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Picker, TouchableOpacity, Alert } from "react-native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { style } from "./styles";
 
@@ -10,7 +11,10 @@ export default function AddItem (){
     const [quantidade,setQuantidade] = useState("")
     const [cod,setCod] = useState("")
 
+    const navigation = useNavigation<NavigationProp<any>>();
+
     async function saveClothes(){
+        navigation.navigate('SacolaPush')        
         if(nome === "" || tamanho === "" || quantidade === "" || cod === ""){
             Alert.alert("Erro","Preencha todos os campos")
             console.log("Preencha todos os campos")

@@ -1,5 +1,5 @@
-import React, { useContext, useRef } from "react";
-import { View, FlatList, Text } from "react-native";
+import React, { useContext, useRef, useState } from "react";
+import { View, Text, TextInput } from "react-native";
 import { style } from "./styles";
 import { Swipeable, TouchableOpacity } from 'react-native-gesture-handler';
 import { themas } from "../../global/themes";
@@ -12,6 +12,10 @@ import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function SacolaPush( ){
+
+    const [cliente,setCliente] = useState("")
+    const [telefone,setTelefone] = useState("")
+    const [endereco,setEndereco] = useState("")
 
     const {taskList,handleDelete,handleEdit,filter} = useContext<AuthContextType>(AuthContextList)!;
 
@@ -83,18 +87,42 @@ export default function SacolaPush( ){
     return(
         <View style={style.container}>
             <View style={style.header}>
-                <Text style={style.greeting}>Sacola Push </Text>
+                <View style={style.titleFrame}>
+                    <Text style={style.greeting}>Sacola Push </Text>
+                </View>
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('Main')}>
                     <Ionicons name="arrow-undo-outline" size={35} color="white" />
                 </TouchableOpacity>
             </View>
             <View style={style.boxList}>
-                <FlatList 
-                    data={taskList}
-                    style={{marginTop:40,paddingHorizontal:30}}
-                    keyExtractor={(item,index)=>item.item.toString()}
-                    renderItem={({item,index})=>{return(_renderCard(item,index))}}
-                />
+
+                <View style={style.containerInput}>
+                    <Text style={{fontSize:18}}>Cliente :</Text>
+                    <TextInput style={style.inputGeneric} onChangeText={setCliente} value={cliente} placeholder=""/>
+                </View>
+
+                <View style={style.containerInput}>
+                    <Text style={{fontSize:18}}>Telefone :</Text>
+                    <TextInput style={style.inputGeneric} onChangeText={setTelefone} value={telefone} placeholder="(19) 99999-9999"/>
+                </View>
+
+                <View style={style.containerInput}>
+                    <Text style={{fontSize:18}}>Endereco :</Text>
+                    <TextInput style={style.inputGeneric} onChangeText={setEndereco} value={endereco} placeholder=""/>
+                </View>
+                <View style={style.header}>
+                    <View style={style.button}>
+                        <TouchableOpacity  onPress={() => navigation.navigate('Main')}>
+                            <Text style={style.btnText}>Finaliza</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={style.button}>
+                        <TouchableOpacity onPress={() => navigation.navigate('AddItem')}>
+                            <Text style={style.btnText}>Adicionar Item</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
             </View>
         </View>
     )

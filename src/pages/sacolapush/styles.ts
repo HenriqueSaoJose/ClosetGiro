@@ -11,23 +11,61 @@ export const style = StyleSheet.create({
         width:'100%',
         height:Dimensions.get('window').height/10,
         backgroundColor:themas.Colors.backgroundcolor,
-        // alignItems:'center',
-        justifyContent:'center',
-        paddingHorizontal:20,
-        
-    },
-    greeting:{
-        fontSize:20,
-        color:'#FFF',
-        marginTop:20
-    },
-    boxInput:{
-        width:'80%'
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+        paddingHorizontal:20,  
     },
     boxList:{
         flex:1,
         width:'100%',
-        // backgroundColor:'red'
+        //backgroundColor:'red'
+    },    
+    titleFrame:{
+        height:46,
+        borderWidth:2,
+        backgroundColor:themas.Colors.buttoncolor,
+        borderColor:themas.Colors.primary,
+        borderRadius:10,
+        paddingHorizontal:12,
+        justifyContent:'center',
+    },
+    greeting:{
+        fontSize:20,
+        color:themas.Colors.TitleColor,
+        fontFamily:themas.Fonts.fntTitle
+    },
+    button:{
+        height:46,
+        minWidth:46,
+        backgroundColor:themas.Colors.buttoncolor,
+        padding:5,
+        borderRadius:10,   
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    containerInput:{
+      width:"100%",
+      height:Dimensions.get('window').height/8,
+      gap:5,
+      display: 'flex',
+      padding:15,
+      flexDirection: 'column',
+      alignItems : "flex-start"
+
+    },
+    inputGeneric :{
+      width:"95%",
+      height:"100%",
+      backgroundColor: themas.Colors.secondary,
+      borderRadius:15,
+      paddingHorizontal:5, 
+      borderWidth: 2,
+      borderColor: "transparent",
+      fontSize: 18,
+    },        
+    boxInput:{
+        width:'80%'
     },
     card:{
         width:'100%',
@@ -58,16 +96,10 @@ export const style = StyleSheet.create({
         gap:10,
         alignItems:'center'
     },
-    Button: {
-        backgroundColor: 'red',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 100,
-        marginVertical: 10,
-        borderRadius: 10,
-    },
-    ButtonText: {
-        color: 'white',
-        fontWeight: 'bold',
-    },    
+    btnText:{
+        color: themas.Colors.TitleColor,
+        fontSize:16,
+        fontWeight:"600",
+        width: 150,
+    },   
 })
