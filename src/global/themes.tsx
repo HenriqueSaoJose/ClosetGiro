@@ -1,7 +1,10 @@
-export const themas = {
+export const Themes = {
     Colors :{
+        bgInput:'#f1f7fa',
+        bdColor: '#cccccc',
+
         backgroundcolor: '#E5B0BD',
-        buttoncolor: "#A40652",
+        buttoncolor: "#A40652",        
         primary:'#878af6',
         secondary:'#ffffff',
         lightGray:'#d7d8d7',

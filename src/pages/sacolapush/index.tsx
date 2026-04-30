@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from "react";
 import { View, Text, TextInput } from "react-native";
 import { style } from "./styles";
 import { Swipeable, TouchableOpacity } from 'react-native-gesture-handler';
-import { themas } from "../../global/themes";
+import { Themes } from "../../global/themes";
 import { PropCard, AuthContextType } from "../../global/Props";
 import { AuthContextList } from "../../context/authContext_list";
 import { Ball } from "../../components/Ball";
@@ -10,6 +10,7 @@ import { Flag } from "../../components/Flag";
 
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
+import { Input } from "../../components/Input";
 
 export default function SacolaPush( ){
 
@@ -24,7 +25,7 @@ export default function SacolaPush( ){
     const navigation = useNavigation<NavigationProp<any>>();
 
     const renderRightActions = () => (
-        <View style={style.Button}>
+        <View style={style.button}>
           {/* <AntDesign 
             name="delete"
             size={20}
@@ -34,7 +35,7 @@ export default function SacolaPush( ){
     );
 
     const renderLeftActions = () => (
-        <View style={[style.Button,{backgroundColor:themas.Colors.blueLigth}]}>
+        <View style={[style.button,{backgroundColor:Themes.Colors.blueLight}]}>
             {/* <AntDesign 
                 name="edit"
                 size={20}
@@ -54,7 +55,7 @@ export default function SacolaPush( ){
     }
 
     const _renderCard = (item:PropCard,index:number) =>{        
-        const color  = item.flag === 'opcional'?themas.Colors.blueLigth:themas.Colors.red
+        const color  = item.flag === 'opcional'?Themes.Colors.blueLight:Themes.Colors.red
         return (
             <Swipeable  
                 ref={(ref: any) => swipeableRefs.current[index] = ref as Swipeable | null} 
@@ -96,10 +97,11 @@ export default function SacolaPush( ){
             </View>
             <View style={style.boxList}>
 
-                <View style={style.containerInput}>
-                    <Text style={{fontSize:18}}>Cliente :</Text>
-                    <TextInput style={style.inputGeneric} onChangeText={setCliente} value={cliente} placeholder=""/>
-                </View>
+                <Input
+                    title='Cliente :'
+                    value={cliente}
+                    onChangeText={setCliente}
+                />
 
                 <View style={style.containerInput}>
                     <Text style={{fontSize:18}}>Telefone :</Text>

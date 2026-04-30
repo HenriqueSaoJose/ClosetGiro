@@ -1,16 +1,16 @@
 import { Dimensions, StyleSheet} from "react-native";
-import { themas } from "../../global/themes";
+import { Themes } from "../../global/themes";
 
 export const style = StyleSheet.create({ 
     container:{
         flex:1,
-        backgroundColor: themas.Colors.backgroundcolor,        
+        backgroundColor: Themes.Colors.backgroundcolor,        
         alignItems:'center',
     },
     header:{
         width:'100%',
         height:Dimensions.get('window').height/10,
-        backgroundColor:themas.Colors.backgroundcolor,
+        backgroundColor:Themes.Colors.backgroundcolor,
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',
@@ -24,21 +24,21 @@ export const style = StyleSheet.create({
     titleFrame:{
         height:46,
         borderWidth:2,
-        backgroundColor:themas.Colors.buttoncolor,
-        borderColor:themas.Colors.primary,
+        backgroundColor:Themes.Colors.buttoncolor,
+        borderColor:Themes.Colors.primary,
         borderRadius:10,
         paddingHorizontal:12,
         justifyContent:'center',
     },
     greeting:{
         fontSize:20,
-        color:themas.Colors.TitleColor,
-        fontFamily:themas.Fonts.fntTitle
+        color:Themes.Colors.TitleColor,
+        fontFamily:Themes.Fonts.fntTitle
     },
     button:{
         height:46,
         minWidth:46,
-        backgroundColor:themas.Colors.buttoncolor,
+        backgroundColor:Themes.Colors.buttoncolor,
         padding:5,
         borderRadius:10,   
         justifyContent:'center',
@@ -57,7 +57,7 @@ export const style = StyleSheet.create({
     inputGeneric :{
       width:"95%",
       height:"100%",
-      backgroundColor: themas.Colors.secondary,
+      backgroundColor: Themes.Colors.secondary,
       borderRadius:15,
       paddingHorizontal:5, 
       borderWidth: 2,
@@ -76,7 +76,7 @@ export const style = StyleSheet.create({
         justifyContent:'center',
         padding:10,
         borderWidth:1,
-        borderColor:themas.Colors.lightGray
+        borderColor:Themes.Colors.lightGray
     },
     rowCard:{
         flexDirection:'row',
@@ -88,7 +88,7 @@ export const style = StyleSheet.create({
         fontWeight:'bold'
     },
     descriptionCard:{
-        color:themas.Colors.gray
+        color:Themes.Colors.gray
     },
     rowCardLeft:{
         width:'70%',
@@ -97,7 +97,7 @@ export const style = StyleSheet.create({
         alignItems:'center'
     },
     btnText:{
-        color: themas.Colors.TitleColor,
+        color: Themes.Colors.TitleColor,
         fontSize:16,
         fontWeight:"600",
         width: 150,

@@ -3,6 +3,7 @@ import { View, Text, TextInput, Picker, TouchableOpacity, Alert } from "react-na
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { style } from "./styles";
+import { Input } from "../../components/Input";
 
 export default function AddItem (){
 
@@ -37,10 +38,13 @@ export default function AddItem (){
                 </TouchableOpacity>
             </View>
             <View style={style.ContainerForm}>
-                <View style={style.containerInput}>
-                    <Text style={{fontSize:18}}>Nome:</Text>
-                    <TextInput style={style.inputGeneric} onChangeText={setNome} value={nome} placeholder="Camiseta Preta"/>
-                </View>
+                <Input
+                    title="Nome:"
+                    onChangeText={setNome}
+                    value={nome}
+                    placeholder="Camiseta Preta"
+                />
+
 
                 <View style={style.containerInput}>
                     <Text style={{fontSize: 18}}>Tamanho:</Text>
