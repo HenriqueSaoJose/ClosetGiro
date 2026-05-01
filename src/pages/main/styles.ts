@@ -1,12 +1,12 @@
 import { StyleSheet,Dimensions} from "react-native";
-import { themas } from "../../global/themes";
+import { Themes } from "../../global/themes";
 
 export const style = StyleSheet.create({
     container:{
         flex:1,
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor: themas.Colors.backgroundcolor,
+        backgroundColor: Themes.Colors.backgroundcolor,
     },
     boxTop:{
         flex:1,
@@ -26,25 +26,25 @@ export const style = StyleSheet.create({
     txtTitle:{
         fontSize:75,
         height:"auto",
-        fontFamily: themas.Fonts.fntTitle,
-        color: themas.Colors.TitleColor,
+        fontFamily: Themes.Fonts.fntTitle,
+        color: Themes.Colors.TitleColor,
     },
     txtSubtitle:{
         fontSize:25,
         fontWeight:"500",
-        color: themas.Colors.TitleColor,
+        color: Themes.Colors.TitleColor,
     },
     btnMain:{
         width:300,
         height:50,
-        backgroundColor: themas.Colors.buttoncolor,
+        backgroundColor: Themes.Colors.buttoncolor,
         borderRadius:10,
         alignItems:'center',
         justifyContent:'center',
         marginVertical:6,
     },
     btnText:{
-        color: themas.Colors.TitleColor,
+        color: Themes.Colors.TitleColor,
         fontSize:16,
         fontWeight:"600",
     },

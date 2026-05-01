@@ -1,10 +1,10 @@
 import { StyleSheet} from "react-native";
-import { themas } from "../../global/themes";
+import { Themes } from "../../global/themes";
 
 export const style = StyleSheet.create({
     ContainerMain:{
         flex: 1,
-        backgroundColor: themas.Colors.backgroundcolor,
+        backgroundColor: Themes.Colors.backgroundcolor,
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent:'flex-start',
@@ -21,28 +21,28 @@ export const style = StyleSheet.create({
     ContainerText : {
       height:"92%",
       width: '58%',
-      backgroundColor: themas.Colors.buttomcolor,
+      backgroundColor: Themes.Colors.buttoncolor,
       display: 'flex',
       alignItems: 'flex-start',
       borderRadius: 5,
       marginTop:5,
       justifyContent: 'center',
       paddingHorizontal:10,
-      shadowColor: themas.Colors.blackTransparent,
+      shadowColor: Themes.Colors.blackTransparent,
       shadowOffset: { width: 4, height: 8 },
       shadowOpacity: 0.27,
       shadowRadius: 19,
       elevation: 5,
     },
      fontmain:{
-      fontFamily: themas.Fonts.fntTitle,
-      color: themas.Colors.TitleColor,
+      fontFamily: Themes.Fonts.fntTitle,
+      color: Themes.Colors.TitleColor,
       fontSize:35
     },
     buttonEstoque:{
       width: '20%',
       height:'86%',
-      backgroundColor: themas.Colors.buttomcolor,
+      backgroundColor: Themes.Colors.buttoncolor,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -71,7 +71,7 @@ export const style = StyleSheet.create({
     inputGeneric :{
       width:"90%",
       height:"45%",
-      backgroundColor: themas.Colors.secondary,
+      backgroundColor: Themes.Colors.secondary,
       borderRadius:15,
       paddingHorizontal:5, 
       borderWidth: 2,

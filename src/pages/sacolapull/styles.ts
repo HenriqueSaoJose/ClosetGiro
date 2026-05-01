@@ -1,16 +1,16 @@
 import { Dimensions, StyleSheet} from "react-native";
-import { themas } from "../../global/themes";
+import { Themes } from "../../global/themes";
 
 export const style = StyleSheet.create({ 
     container:{
         flex:1,
-        backgroundColor: themas.Colors.backgroundcolor,        
+        backgroundColor: Themes.Colors.backgroundcolor,        
         alignItems:'center',
     },
     header:{
         width:'100%',
         height:Dimensions.get('window').height/10,
-        backgroundColor:themas.Colors.backgroundcolor,
+        backgroundColor:Themes.Colors.backgroundcolor,
         // alignItems:'center',
         justifyContent:'center',
         paddingHorizontal:20,
@@ -38,7 +38,7 @@ export const style = StyleSheet.create({
         justifyContent:'center',
         padding:10,
         borderWidth:1,
-        borderColor:themas.Colors.lightGray
+        borderColor:Themes.Colors.lightGray
     },
     rowCard:{
         flexDirection:'row',
@@ -50,7 +50,7 @@ export const style = StyleSheet.create({
         fontWeight:'bold'
     },
     descriptionCard:{
-        color:themas.Colors.gray
+        color:Themes.Colors.gray
     },
     rowCardLeft:{
         width:'70%',
